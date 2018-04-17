@@ -1,6 +1,8 @@
 <?php
 
-require 'database.php';
+require 'includes/database.php';
+
+$conn = getDB();
 
 $sql = "SELECT *
         FROM article
@@ -15,7 +17,7 @@ if ($results === false) {
 }
 
 ?>
-<?php require 'header.php'; ?>
+<?php require 'includes/header.php'; ?>
         <?php if (empty($articles)): ?>
             <p>No articles found.</p>
         <?php else: ?>
@@ -31,4 +33,4 @@ if ($results === false) {
         </ul>
         <?php endif; ?>
 
-<?php require 'footer.php'; ?>
+<?php require 'includesfooter.php'; ?>

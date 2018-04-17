@@ -1,6 +1,8 @@
 <?php
 
-require 'database.php';
+require 'includes/database.php';
+
+$conn = getDB();
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
@@ -21,7 +23,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 }
 
 ?>
-<?php require 'header.php'; ?>
+<?php require 'includes/header.php'; ?>
     <?php if ($article === null): ?>
         <p>Article not found.</p>
     <?php else: ?>
@@ -32,4 +34,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </article>
 
     <?php endif; ?>
-<?php require 'footer.php'; ?>
+<?php require 'includes/footer.php'; ?>
